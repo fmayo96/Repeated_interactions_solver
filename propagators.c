@@ -18,6 +18,9 @@ int Dissipator(double complex *dissipator, double complex *state, double complex
     {
         *(dissipator + i) = -*(dissipator + i) * 0.5;
     }
+    free(rho);
+    free(comm_v_rho);
+    free(double_comm);
     return 0;
 }
 int Propagator(double complex *propagator, double complex *state, double complex *hamiltonian, double complex *dissipator, int dim)
